@@ -5,9 +5,18 @@ const translations: Record<string, Record<string, unknown>> = { zh, en };
 
 export type Lang = 'zh' | 'en';
 
+const validLangs: Lang[] = ['zh', 'en'];
+
 export function getLang(): Lang {
   if (typeof window !== 'undefined') {
-    return (localStorage.getItem('lang') as Lang) || 'zh';
+    try {
+      const stored = localStorage.getItem('lang');
+      if (stored && validLangs.includes(stored as Lang)) {
+        return stored as Lang;
+      }
+    } catch {
+      // localStorage unavailable (e.g. sandboxed iframe)
+    }
   }
   return 'zh';
 }
@@ -47,7 +56,7 @@ export function tArray(key: string, lang?: Lang): string[] {
   return Array.isArray(value) ? value as string[] : [];
 }
 
-export function tData<T>(key: string, lang?: Lang): T {
+export function tData<T>(key: string, lang?: Lang): T | undefined {
   const currentLang = lang ?? getLang();
   const keys = key.split('.');
   let value: unknown = translations[currentLang];
@@ -55,7 +64,7 @@ export function tData<T>(key: string, lang?: Lang): T {
     if (value && typeof value === 'object') {
       value = (value as Record<string, unknown>)[k];
     } else {
-      return [] as unknown as T;
+      return undefined;
     }
   }
   return value as T;

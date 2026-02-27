@@ -22,7 +22,12 @@ const { title, description = 'Wenn 的個人網站 - 作品集與自我介紹' }
     <!-- Early language detection to prevent flash -->
     <script is:inline>
       (function() {
-        const lang = localStorage.getItem('lang') || 'zh';
+        var lang = 'zh';
+        try {
+          lang = localStorage.getItem('lang') || 'zh';
+        } catch (e) {
+          // localStorage unavailable
+        }
         document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hant';
         document.documentElement.setAttribute('data-lang', lang);
       })();
@@ -34,5 +39,25 @@ const { title, description = 'Wenn 的個人網站 - 作品集與自我介紹' }
       <slot />
     </main>
     <Footer />
+    <!-- Update document.title based on language -->
+    <script is:inline>
+      (function() {
+        var lang = 'zh';
+        try { lang = localStorage.getItem('lang') || 'zh'; } catch(e) {}
+        if (lang === 'en') {
+          var titles = {
+            '/': 'Wenn - Portfolio',
+            '/about': 'About - Wenn',
+            '/about/': 'About - Wenn',
+            '/projects': 'Projects - Wenn',
+            '/projects/': 'Projects - Wenn',
+            '/contact': 'Contact - Wenn',
+            '/contact/': 'Contact - Wenn'
+          };
+          var t = titles[window.location.pathname];
+          if (t) document.title = t;
+        }
+      })();
+    </script>
   </body>
 </html>

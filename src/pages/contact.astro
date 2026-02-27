@@ -75,7 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   const lang = getLang();
-  const dict = translations[lang];
+  const dict = translations[lang] ?? translations['zh'];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (key) {
