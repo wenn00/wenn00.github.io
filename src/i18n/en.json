@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Wenn",
+    "tagline": "Developer / Student who loves technology",
+    "cta_projects": "View Projects",
+    "cta_contact": "Contact Me"
+  },
+  "home": {
+    "featured_title": "Featured Projects",
+    "featured_subtitle": "Here are some of my recent works"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm a passionate student interested in software development. I enjoy exploring new technologies and learning through hands-on projects. Currently focused on web development and embedded systems.",
+    "education_title": "Education",
+    "skills_title": "Skills",
+    "skills_languages": "Languages",
+    "skills_domains": "Domains",
+    "skills_tools": "Tools"
+  },
+  "projects": {
+    "title": "All Projects",
+    "subtitle": "Projects I've completed in coursework and personal time",
+    "view_github": "GitHub",
+    "view_demo": "Demo",
+    "view_video": "Video",
+    "view_report": "Report",
+    "private_repo": "Private"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Feel free to reach out through any of the following",
+    "email_label": "Email",
+    "github_label": "GitHub",
+    "linkedin_label": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "© 2026 Wenn. All rights reserved."
+  },
+  "education": [
+    {
+      "school": "Some University",
+      "department": "Computer Science",
+      "period": "2022 - 2026",
+      "description": "Major in Computer Science, focusing on software development and embedded systems."
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "JavaScript", "TypeScript", "C/C++", "HTML/CSS"],
+    "domains": ["Web Development", "Embedded Systems", "Machine Learning", "Computer Vision"],
+    "tools": ["Git", "Docker", "Linux", "VS Code", "Figma"]
+  },
+  "project_list": [
+    {
+      "title": "Personal Portfolio Website",
+      "description": "A personal website built with Astro + TailwindCSS, supporting bilingual (Chinese/English) switching.",
+      "tags": ["Astro", "TailwindCSS", "TypeScript"],
+      "github": "https://github.com/wenn00/wenn00.github.io",
+      "demo": "https://wenn00.github.io",
+      "image": "/images/projects/portfolio.svg",
+      "private": false
+    },
+    {
+      "title": "Autonomous Racing Car",
+      "description": "An autonomous driving project based on the F1tenth platform, implementing path planning and obstacle avoidance.",
+      "tags": ["Python", "ROS2", "C++"],
+      "github": "",
+      "demo": "",
+      "image": "/images/projects/f1tenth.svg",
+      "private": true
+    },
+    {
+      "title": "Hand Gesture Recognition",
+      "description": "Real-time hand gesture recognition using MediaPipe, capable of controlling presentation slides.",
+      "tags": ["Python", "MediaPipe", "OpenCV"],
+      "github": "https://github.com/wenn00/hand_detect",
+      "demo": "",
+      "image": "/images/projects/hand-detect.svg",
+      "private": false
+    },
+    {
+      "title": "AI Chatbot",
+      "description": "A chatbot powered by LLM API, supporting multi-turn conversations with context memory.",
+      "tags": ["Python", "FastAPI", "React"],
+      "github": "https://github.com/wenn00/AIChatPractice",
+      "demo": "",
+      "image": "/images/projects/ai-chat.svg",
+      "private": false
+    },
+    {
+      "title": "Dance Tutorial Platform",
+      "description": "An interactive dance learning application using pose estimation technology.",
+      "tags": ["Python", "MediaPipe", "Web"],
+      "github": "",
+      "demo": "",
+      "video": "",
+      "image": "/images/projects/dance.svg",
+      "private": false
+    }
+  ],
+  "contact_info": {
+    "email": "your.email@example.com",
+    "github": "https://github.com/wenn00",
+    "linkedin": "https://linkedin.com/in/your-profile"
+  }
+}

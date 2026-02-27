@@ -1,0 +1,19 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f1f5f9"/>
+
+  <!-- Globe icon -->
+  <g transform="translate(400, 120)">
+    <!-- Circle for globe -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Vertical line -->
+    <line x1="0" y1="-40" x2="0" y2="40" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Horizontal line -->
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Curved line -->
+    <path d="M -30 -25 Q 0 10 30 -25" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#64748b">Portfolio</text>
+</svg>

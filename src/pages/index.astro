@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const featuredProjects = [
+  {
+    title: '個人作品集網站',
+    description: '使用 Astro + TailwindCSS 建立的個人網站，支援中英雙語切換。',
+    tags: ['Astro', 'TailwindCSS', 'TypeScript'],
+    github: 'https://github.com/wenn00/wenn00.github.io',
+    demo: 'https://wenn00.github.io',
+    image: '/images/projects/portfolio.svg',
+  },
+  {
+    title: '手勢辨識系統',
+    description: '使用 MediaPipe 進行即時手勢辨識，可控制簡報翻頁。',
+    tags: ['Python', 'MediaPipe', 'OpenCV'],
+    github: 'https://github.com/wenn00/hand_detect',
+    image: '/images/projects/hand-detect.svg',
+  },
+  {
+    title: 'AI 聊天機器人',
+    description: '串接 LLM API 的聊天機器人，支援多輪對話與上下文記憶。',
+    tags: ['Python', 'FastAPI', 'React'],
+    github: 'https://github.com/wenn00/AIChatPractice',
+    image: '/images/projects/ai-chat.svg',
+  },
+];
+---
+
+<BaseLayout title="Wenn - 個人網站">
+  <Hero />
+
+  <!-- Featured Projects -->
+  <section class="py-16 bg-bg-gray">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-heading mb-3" data-i18n="home.featured_title">精選專案</h2>
+        <p class="text-body" data-i18n="home.featured_subtitle">以下是一些我近期完成的作品</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredProjects.map(project => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            image={project.image}
+            github={project.github}
+            demo={project.demo}
+          />
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/projects" class="inline-block px-6 py-3 border border-primary text-primary font-medium rounded-lg hover:bg-tag-bg transition-colors" data-i18n="hero.cta_projects">
+          查看所有專案
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { getLang } from '../i18n/utils';
+  import zh from '../i18n/zh.json';
+  import en from '../i18n/en.json';
+
+  const translations: Record<string, Record<string, unknown>> = { zh, en };
+
+  function getNestedValue(obj: unknown, path: string): string | undefined {
+    const keys = path.split('.');
+    let value: unknown = obj;
+    for (const k of keys) {
+      if (value && typeof value === 'object') {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return undefined;
+      }
+    }
+    return typeof value === 'string' ? value : undefined;
+  }
+
+  const lang = getLang();
+  const dict = translations[lang];
+
+  // Update i18n text
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key) {
+      const text = getNestedValue(dict, key);
+      if (text) el.textContent = text;
+    }
+  });
+
+  // Update featured projects data from translations
+  if (lang === 'en') {
+    const projectList = (en as Record<string, unknown>).project_list as Array<Record<string, string>>;
+    const cards = document.querySelectorAll('.grid > div');
+    const featuredIndices = [0, 2, 3]; // portfolio, hand-detect, ai-chat
+    cards.forEach((card, i) => {
+      if (featuredIndices[i] !== undefined) {
+        const proj = projectList[featuredIndices[i]];
+        const titleEl = card.querySelector('h3');
+        const descEl = card.querySelector('p');
+        if (titleEl && proj) titleEl.textContent = proj.title;
+        if (descEl && proj) descEl.textContent = proj.description;
+      }
+    });
+  }
+</script>

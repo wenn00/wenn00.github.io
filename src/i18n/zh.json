@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於我",
+    "projects": "專案",
+    "contact": "聯絡"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "Wenn",
+    "tagline": "熱愛技術的開發者 / 學生",
+    "cta_projects": "查看專案",
+    "cta_contact": "聯絡我"
+  },
+  "home": {
+    "featured_title": "精選專案",
+    "featured_subtitle": "以下是一些我近期完成的作品"
+  },
+  "about": {
+    "title": "關於我",
+    "intro": "我是一位對軟體開發充滿熱情的學生，喜歡探索新技術並透過專案實作來學習。目前專注於網頁開發與嵌入式系統領域。",
+    "education_title": "學歷",
+    "skills_title": "技能",
+    "skills_languages": "程式語言",
+    "skills_domains": "技術領域",
+    "skills_tools": "工具"
+  },
+  "projects": {
+    "title": "所有專案",
+    "subtitle": "我在課堂與個人時間完成的各種專案",
+    "view_github": "GitHub",
+    "view_demo": "Demo",
+    "view_video": "影片",
+    "view_report": "報告",
+    "private_repo": "私有專案"
+  },
+  "contact": {
+    "title": "聯絡方式",
+    "subtitle": "歡迎透過以下方式與我聯繫",
+    "email_label": "Email",
+    "github_label": "GitHub",
+    "linkedin_label": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "© 2026 Wenn. All rights reserved."
+  },
+  "education": [
+    {
+      "school": "某某大學",
+      "department": "資訊工程學系",
+      "period": "2022 - 2026",
+      "description": "主修資訊工程，專注於軟體開發與嵌入式系統。"
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "JavaScript", "TypeScript", "C/C++", "HTML/CSS"],
+    "domains": ["Web 開發", "嵌入式系統", "機器學習", "電腦視覺"],
+    "tools": ["Git", "Docker", "Linux", "VS Code", "Figma"]
+  },
+  "project_list": [
+    {
+      "title": "個人作品集網站",
+      "description": "使用 Astro + TailwindCSS 建立的個人網站，支援中英雙語切換。",
+      "tags": ["Astro", "TailwindCSS", "TypeScript"],
+      "github": "https://github.com/wenn00/wenn00.github.io",
+      "demo": "https://wenn00.github.io",
+      "image": "/images/projects/portfolio.svg",
+      "private": false
+    },
+    {
+      "title": "自動駕駛小車",
+      "description": "基於 F1tenth 平台的自動駕駛專案，實作了路徑規劃與避障演算法。",
+      "tags": ["Python", "ROS2", "C++"],
+      "github": "",
+      "demo": "",
+      "image": "/images/projects/f1tenth.svg",
+      "private": true
+    },
+    {
+      "title": "手勢辨識系統",
+      "description": "使用 MediaPipe 進行即時手勢辨識，可控制簡報翻頁。",
+      "tags": ["Python", "MediaPipe", "OpenCV"],
+      "github": "https://github.com/wenn00/hand_detect",
+      "demo": "",
+      "image": "/images/projects/hand-detect.svg",
+      "private": false
+    },
+    {
+      "title": "AI 聊天機器人",
+      "description": "串接 LLM API 的聊天機器人，支援多輪對話與上下文記憶。",
+      "tags": ["Python", "FastAPI", "React"],
+      "github": "https://github.com/wenn00/AIChatPractice",
+      "demo": "",
+      "image": "/images/projects/ai-chat.svg",
+      "private": false
+    },
+    {
+      "title": "舞蹈教學平台",
+      "description": "使用姿態估計技術的互動式舞蹈教學應用。",
+      "tags": ["Python", "MediaPipe", "Web"],
+      "github": "",
+      "demo": "",
+      "video": "",
+      "image": "/images/projects/dance.svg",
+      "private": false
+    }
+  ],
+  "contact_info": {
+    "email": "your.email@example.com",
+    "github": "https://github.com/wenn00",
+    "linkedin": "https://linkedin.com/in/your-profile"
+  }
+}

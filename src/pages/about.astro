@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
+import SkillTags from '../components/SkillTags.astro';
+
+const education = [
+  {
+    school: '某某大學',
+    department: '資訊工程學系',
+    period: '2022 - 2026',
+    description: '主修資訊工程，專注於軟體開發與嵌入式系統。',
+  },
+];
+
+const skillLanguages = ['Python', 'JavaScript', 'TypeScript', 'C/C++', 'HTML/CSS'];
+const skillDomains = ['Web 開發', '嵌入式系統', '機器學習', '電腦視覺'];
+const skillTools = ['Git', 'Docker', 'Linux', 'VS Code', 'Figma'];
+---
+
+<BaseLayout title="關於我 - Wenn">
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Intro -->
+      <h1 class="text-3xl font-bold text-heading mb-6" data-i18n="about.title">關於我</h1>
+      <p class="text-lg text-body mb-12 leading-relaxed" data-i18n="about.intro">
+        我是一位對軟體開發充滿熱情的學生，喜歡探索新技術並透過專案實作來學習。目前專注於網頁開發與嵌入式系統領域。
+      </p>
+
+      <!-- Education -->
+      <h2 class="text-2xl font-bold text-heading mb-6" data-i18n="about.education_title">學歷</h2>
+      <div class="mb-12" id="education-timeline">
+        <Timeline items={education} />
+      </div>
+
+      <!-- Skills -->
+      <h2 class="text-2xl font-bold text-heading mb-6" data-i18n="about.skills_title">技能</h2>
+      <div class="flex flex-col gap-6">
+        <SkillTags title="程式語言" skills={skillLanguages} />
+        <SkillTags title="技術領域" skills={skillDomains} />
+        <SkillTags title="工具" skills={skillTools} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { getLang } from '../i18n/utils';
+  import zh from '../i18n/zh.json';
+  import en from '../i18n/en.json';
+
+  const translations: Record<string, Record<string, unknown>> = { zh, en };
+
+  function getNestedValue(obj: unknown, path: string): string | undefined {
+    const keys = path.split('.');
+    let value: unknown = obj;
+    for (const k of keys) {
+      if (value && typeof value === 'object') {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return undefined;
+      }
+    }
+    return typeof value === 'string' ? value : undefined;
+  }
+
+  const lang = getLang();
+  const dict = translations[lang];
+
+  // Update i18n text
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key) {
+      const text = getNestedValue(dict, key);
+      if (text) el.textContent = text;
+    }
+  });
+
+  // Update education and skills from translations
+  if (lang === 'en') {
+    const enData = en as Record<string, unknown>;
+    const eduList = enData.education as Array<Record<string, string>>;
+    const skills = enData.skills as Record<string, string[]>;
+
+    // Update education timeline
+    const timeline = document.getElementById('education-timeline');
+    if (timeline && eduList) {
+      const items = timeline.querySelectorAll('.relative.pl-12');
+      items.forEach((item, i) => {
+        if (eduList[i]) {
+          const h3 = item.querySelector('h3');
+          const period = item.querySelector('.text-muted');
+          const dept = item.querySelector('.text-primary');
+          const desc = item.querySelector('.text-body');
+          if (h3) h3.textContent = eduList[i].school;
+          if (period) period.textContent = eduList[i].period;
+          if (dept) dept.textContent = eduList[i].department;
+          if (desc) desc.textContent = eduList[i].description;
+        }
+      });
+    }
+
+    // Update skill section titles
+    const skillSections = document.querySelectorAll('.flex.flex-col.gap-6 > div');
+    const skillTitles = [
+      getNestedValue(dict, 'about.skills_languages'),
+      getNestedValue(dict, 'about.skills_domains'),
+      getNestedValue(dict, 'about.skills_tools'),
+    ];
+    const skillArrays = [skills.languages, skills.domains, skills.tools];
+
+    skillSections.forEach((section, i) => {
+      const titleEl = section.querySelector('h3');
+      if (titleEl && skillTitles[i]) titleEl.textContent = skillTitles[i];
+
+      // Update skill tags
+      const tags = section.querySelectorAll('span');
+      if (skillArrays[i]) {
+        tags.forEach((tag, j) => {
+          if (skillArrays[i][j]) tag.textContent = skillArrays[i][j];
+        });
+      }
+    });
+  }
+</script>

@@ -1,0 +1,21 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f1f5f9"/>
+
+  <!-- Music note icon -->
+  <g transform="translate(400, 120)">
+    <!-- First note head -->
+    <ellipse cx="-15" cy="15" rx="6" ry="8" fill="#94a3b8" transform="rotate(-20 -15 15)"/>
+    <!-- First stem -->
+    <line x1="-9" y1="8" x2="-5" y2="-25" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+    <!-- Second note head -->
+    <ellipse cx="5" cy="25" rx="6" ry="8" fill="#94a3b8" transform="rotate(-20 5 25)"/>
+    <!-- Second stem -->
+    <line x1="11" y1="18" x2="15" y2="-15" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+    <!-- Connecting beam -->
+    <path d="M -5 -25 Q 5 -20 15 -15" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#64748b">Dance Tutorial</text>
+</svg>
