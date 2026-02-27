@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Wenn 的個人網站 - 作品集與自我介紹' } = Astro.props;
+const { title, description = 'Rita Li 的個人網站 - 作品集與自我介紹' } = Astro.props;
 ---
 
 <!doctype html>
@@ -46,13 +46,13 @@ const { title, description = 'Wenn 的個人網站 - 作品集與自我介紹' }
         try { lang = localStorage.getItem('lang') || 'zh'; } catch(e) {}
         if (lang === 'en') {
           var titles = {
-            '/': 'Wenn - Portfolio',
-            '/about': 'About - Wenn',
-            '/about/': 'About - Wenn',
-            '/projects': 'Projects - Wenn',
-            '/projects/': 'Projects - Wenn',
-            '/contact': 'Contact - Wenn',
-            '/contact/': 'Contact - Wenn'
+            '/': 'Rita Li - Portfolio',
+            '/about': 'About - Rita Li',
+            '/about/': 'About - Rita Li',
+            '/projects': 'Projects - Rita Li',
+            '/projects/': 'Projects - Rita Li',
+            '/contact': 'Contact - Rita Li',
+            '/contact/': 'Contact - Rita Li'
           };
           var t = titles[window.location.pathname];
           if (t) document.title = t;

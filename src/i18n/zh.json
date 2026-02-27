@@ -7,7 +7,7 @@
   },
   "hero": {
     "greeting": "你好，我是",
-    "name": "Wenn",
+    "name": "文涵 Rita",
     "tagline": "熱愛技術的開發者 / 學生",
     "cta_projects": "查看專案",
     "cta_contact": "聯絡我"
@@ -42,14 +42,26 @@
     "linkedin_label": "LinkedIn"
   },
   "footer": {
-    "copyright": "© 2026 Wenn. All rights reserved."
+    "copyright": "© 2026 Rita Li. All rights reserved."
   },
   "education": [
     {
-      "school": "某某大學",
-      "department": "資訊工程學系",
-      "period": "2022 - 2026",
-      "description": "主修資訊工程，專注於軟體開發與嵌入式系統。"
+      "school": "加州大學爾灣分校 (UCI)",
+      "department": "電機工程與資訊科學 (3+2 雙學位計畫)",
+      "period": "2025 年 9 月 – 至今",
+      "description": "GPA: 3.90"
+    },
+    {
+      "school": "長庚大學 (CGU)",
+      "department": "人工智慧學系 學士",
+      "period": "2022 年 9 月 – 至今",
+      "description": "GPA: 3.89"
+    },
+    {
+      "school": "迪肯大學 (Deakin University)",
+      "department": "5 週國際交換學程",
+      "period": "2023 年暑假",
+      "description": ""
     }
   ],
   "skills": {
@@ -106,8 +118,8 @@
     }
   ],
   "contact_info": {
-    "email": "your.email@example.com",
+    "email": "lwhwen00@gmail.com",
     "github": "https://github.com/wenn00",
-    "linkedin": "https://linkedin.com/in/your-profile"
+    "linkedin": "https://www.linkedin.com/in/rita-lee-8b0b16324/"
   }
 }

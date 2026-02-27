@@ -7,7 +7,7 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "name": "Wenn",
+    "name": "Rita Li",
     "tagline": "Developer / Student who loves technology",
     "cta_projects": "View Projects",
     "cta_contact": "Contact Me"
@@ -42,14 +42,26 @@
     "linkedin_label": "LinkedIn"
   },
   "footer": {
-    "copyright": "© 2026 Wenn. All rights reserved."
+    "copyright": "© 2026 Rita Li. All rights reserved."
   },
   "education": [
     {
-      "school": "Some University",
-      "department": "Computer Science",
-      "period": "2022 - 2026",
-      "description": "Major in Computer Science, focusing on software development and embedded systems."
+      "school": "University of California, Irvine (UCI)",
+      "department": "EECS (3+2 Dual-Degree Program)",
+      "period": "Sep 2025 – Present",
+      "description": "GPA: 3.90"
+    },
+    {
+      "school": "Chang Gung University (CGU)",
+      "department": "B.S. in Artificial Intelligence",
+      "period": "Sep 2022 – Present",
+      "description": "GPA: 3.89"
+    },
+    {
+      "school": "Deakin University",
+      "department": "5-week International Study Abroad Program",
+      "period": "Summer 2023",
+      "description": ""
     }
   ],
   "skills": {
@@ -106,8 +118,8 @@
     }
   ],
   "contact_info": {
-    "email": "your.email@example.com",
+    "email": "lwhwen00@gmail.com",
     "github": "https://github.com/wenn00",
-    "linkedin": "https://linkedin.com/in/your-profile"
+    "linkedin": "https://www.linkedin.com/in/rita-lee-8b0b16324/"
   }
 }
